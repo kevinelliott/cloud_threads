@@ -1,0 +1,2 @@
+json.extract! server, :id, :name, :description, :logo_url, :base_url, :cloudthreads_version, :user_count, :local_board_count, :local_thread_count, :local_message_count, :syndicated_board_count, :syndicated_thread_count, :syndicated_message_count, :registration_status, :availability_status, :announcement_status, :created_at, :updated_at
+json.url server_url(server, format: :json)

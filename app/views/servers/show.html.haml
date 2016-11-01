@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @server.name
+%p
+  %b Description:
+  = @server.description
+%p
+  %b Logo url:
+  = @server.logo_url
+%p
+  %b Base url:
+  = @server.base_url
+%p
+  %b Cloudthreads version:
+  = @server.cloudthreads_version
+%p
+  %b User count:
+  = @server.user_count
+%p
+  %b Local board count:
+  = @server.local_board_count
+%p
+  %b Local thread count:
+  = @server.local_thread_count
+%p
+  %b Local message count:
+  = @server.local_message_count
+%p
+  %b Syndicated board count:
+  = @server.syndicated_board_count
+%p
+  %b Syndicated thread count:
+  = @server.syndicated_thread_count
+%p
+  %b Syndicated message count:
+  = @server.syndicated_message_count
+%p
+  %b Registration status:
+  = @server.registration_status
+%p
+  %b Availability status:
+  = @server.availability_status
+%p
+  %b Announcement status:
+  = @server.announcement_status
+
+= link_to 'Edit', edit_server_path(@server)
+\|
+= link_to 'Back', servers_path

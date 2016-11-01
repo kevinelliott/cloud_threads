@@ -1,0 +1,24 @@
+%h1 Servers
+
+- @servers.each do |server|
+  .server.media
+    .server-logo.media-left.media-middle
+      = image_tag server.logo_url, class: 'media-object'
+    .media-body.server-body
+      %strong
+        = server.name
+      .server-description
+        = server.description
+      .server-stats
+        %span.tag.tag-default.server-stat
+          Users
+          %strong= server.user_count
+        %span.tag.tag-default.server-stat
+          Local Boards
+          %strong= server.local_board_count
+        %span.tag.tag-default.server-stat
+          Local Threads
+          %strong= server.local_thread_count
+        %span.tag.tag-default.server-stat
+          Local Messages
+          %strong= server.local_message_count

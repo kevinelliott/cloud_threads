@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101175623) do
+ActiveRecord::Schema.define(version: 20161101191336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "servers", force: :cascade do |t|
+    t.string   "name",                                             null: false
+    t.text     "description"
+    t.string   "logo_url"
+    t.string   "base_url"
+    t.string   "cloudthreads_version"
+    t.integer  "user_count",               default: 0,             null: false
+    t.integer  "local_board_count",        default: 0,             null: false
+    t.integer  "local_thread_count",       default: 0,             null: false
+    t.integer  "local_message_count",      default: 0,             null: false
+    t.integer  "syndicated_board_count",   default: 0,             null: false
+    t.integer  "syndicated_thread_count",  default: 0,             null: false
+    t.integer  "syndicated_message_count", default: 0,             null: false
+    t.string   "registration_status",      default: "in-review",   null: false
+    t.string   "availability_status",      default: "unavailable", null: false
+    t.string   "announcement_status",      default: "announced",   null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.index ["announcement_status"], name: "index_servers_on_announcement_status", using: :btree
+    t.index ["availability_status"], name: "index_servers_on_availability_status", using: :btree
+    t.index ["local_board_count"], name: "index_servers_on_local_board_count", using: :btree
+    t.index ["local_message_count"], name: "index_servers_on_local_message_count", using: :btree
+    t.index ["local_thread_count"], name: "index_servers_on_local_thread_count", using: :btree
+    t.index ["name"], name: "index_servers_on_name", using: :btree
+    t.index ["registration_status"], name: "index_servers_on_registration_status", using: :btree
+    t.index ["syndicated_board_count"], name: "index_servers_on_syndicated_board_count", using: :btree
+    t.index ["syndicated_message_count"], name: "index_servers_on_syndicated_message_count", using: :btree
+    t.index ["syndicated_thread_count"], name: "index_servers_on_syndicated_thread_count", using: :btree
+    t.index ["user_count"], name: "index_servers_on_user_count", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,55 @@
+= form_for @server do |f|
+  - if @server.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@server.errors.count, "error")} prohibited this server from being saved:"
+      %ul
+        - @server.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :logo_url
+    = f.text_field :logo_url
+  .field
+    = f.label :base_url
+    = f.text_field :base_url
+  .field
+    = f.label :cloudthreads_version
+    = f.text_field :cloudthreads_version
+  .field
+    = f.label :user_count
+    = f.number_field :user_count
+  .field
+    = f.label :local_board_count
+    = f.number_field :local_board_count
+  .field
+    = f.label :local_thread_count
+    = f.number_field :local_thread_count
+  .field
+    = f.label :local_message_count
+    = f.number_field :local_message_count
+  .field
+    = f.label :syndicated_board_count
+    = f.number_field :syndicated_board_count
+  .field
+    = f.label :syndicated_thread_count
+    = f.number_field :syndicated_thread_count
+  .field
+    = f.label :syndicated_message_count
+    = f.number_field :syndicated_message_count
+  .field
+    = f.label :registration_status
+    = f.text_field :registration_status
+  .field
+    = f.label :availability_status
+    = f.text_field :availability_status
+  .field
+    = f.label :announcement_status
+    = f.text_field :announcement_status
+  .actions
+    = f.submit 'Save'
