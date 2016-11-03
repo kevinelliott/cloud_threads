@@ -1,13 +1,19 @@
 %h1 Servers
 
+%p
+  The following communities are running CloudThreads servers.
+
 - @servers.each do |server|
   .server.media
-    .server-logo.media-left.media-middle
-      = image_tag server.logo_url, class: 'media-object'
+    .server-price.float-xs-right
+      %h4 $20/mo
+
+    .media-left
+      .server-logo.float-xs-left.align-middle{ style: "background-image: url(#{server.logo_url});" }
     .media-body.server-body
-      %strong
+      %h4
         = server.name
-      .server-description
+      .server-description.text-muted
         = server.description
       .server-stats
         %span.tag.tag-default.server-stat

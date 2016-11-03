@@ -1,14 +1,24 @@
 .server {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #d6d6d6;
   border-radius: 8px;
-  background-color: #f6ffff;
+  background-color: #fff;
 
-  .server-logo img {
+  .server-header {
+    height: 50px;
+  }
+
+  .server-logo {
     width: 50px;
-    vertical-align: middle;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
+  .server-description {
+    margin-bottom: 5px;
   }
 
   .server-stats {
@@ -21,5 +31,10 @@
 }
 
 .server:hover {
-  background-color: #fff;
+  background-color: #f6ffff;
+  border: 1px solid #c6e6ff;
+
+  .tag-default {
+    background-color: #0275d8;
+  }
 }
