@@ -5,12 +5,13 @@
 
 - @servers.each do |server|
   .server.media
-    .server-price.float-xs-right
-      %h4 $20/mo
-
     .media-left
       .server-logo.float-xs-left.align-middle{ style: "background-image: url(#{server.logo_url});" }
     .media-body.server-body
+      .server-price.float-xs-right.text-xs-right
+        %small.server-price-message.text-muted
+          Server Subscriptions
+        %h4 $20/mo
       %h4
         = server.name
       .server-description.text-muted
